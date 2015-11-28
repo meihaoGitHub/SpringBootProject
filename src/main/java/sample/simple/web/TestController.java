@@ -11,7 +11,7 @@ public class TestController {
     @RequestMapping
     @ResponseBody
     public String index() {
-        return "これは meihao /test のページです。";
+        return "これは  /test のページです。";
     }
 
     @RequestMapping("/thymeleaf-sample")
