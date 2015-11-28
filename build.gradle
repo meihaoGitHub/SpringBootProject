@@ -1,14 +1,48 @@
-group 'meihao.com'
-version '1.0-SNAPSHOT'
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        def springBootVersion = '1.2.3.RELEASE'
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.springframework:springloaded:1.2.1.RELEASE")
+    }
+}
 
 apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'idea'
 
-sourceCompatibility = 1.5
+jar {
+    baseName = 'sample-webapp-basic'
+    version = '0.0.1-SNAPSHOT'
+}
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    def springBootVersion = '1.2.3.RELEASE'
+
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+
+}
+
+bootRun {
+    jvmArgs = ['-Dspring.profiles.active=develop']
+}
+
+test {
+    jvmArgs = ['-Dspring.profiles.active=unittest']
 }
