@@ -11,12 +11,12 @@ public class TestController {
     @RequestMapping
     @ResponseBody
     public String index() {
-        return "これは  /test のページです。";
+        return "これは   /test のページです。";
     }
 
-    @RequestMapping("/thymeleaf-sample")
+    @RequestMapping(value = "/thymeleaf-sample")
     public String thymeleafSample() {
-        return "test/thymeleaf-sample";
+        return "test/thymeleaf-sample2";
     }
 
 }
