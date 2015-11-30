@@ -2,7 +2,6 @@ package sample.simple.web;
 
 public class User {
 
-
     private String name;
 
     private String tel;

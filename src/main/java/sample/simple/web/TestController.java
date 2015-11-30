@@ -12,11 +12,10 @@ public class TestController {
     @RequestMapping
     @ResponseBody
     public String index() {
-        return "これは   /test のページです。";
+        return "これは  /test のページです。";
     }
 
     @RequestMapping(value = "/thymeleaf-sample")
-
     public String thymeleafSample(Model model) {
 
         model.addAttribute("msg", "引数 model を追加してみました。");
@@ -25,7 +24,7 @@ public class TestController {
         user.setTel("03-1234-5678");
         model.addAttribute("user", user);
 
-        return "test/thymeleaf-sample2";
+        return "test/thymeleaf-sample";
     }
 
 }
