@@ -22,7 +22,7 @@ public class TestController {
     @RequestMapping(value = "/thymeleaf-sample")
     public String thymeleafSample(Model model) {
 
-        logger.info("thymeleafSample を実行");
+        logger.info("thymeleafSample on test .... ");
         model.addAttribute("msg", "引数 model を追加してみました。");
         User user = new User();
         user.setName("田中　太郎");
