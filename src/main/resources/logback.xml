@@ -9,7 +9,7 @@
         </encoder>
     </appender>
 
-    <property name="LOG_FILE" value="F:/JAVA/IdeaProjects/sample-webapp-basic/logs/sample-webapp-basic.log"/>
+    <property name="LOG_FILE" value="D:/Tools/Java\webapps/SpringBootProject/sample-webapp-basic/logs/sample-webapp-basic.log"/>
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
             <pattern>${FILE_LOG_PATTERN}</pattern>
